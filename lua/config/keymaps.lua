@@ -15,7 +15,7 @@ keymap.set("n", "<C-a>", "gg<S-v>G")
 keymap.set("n", "<C-m>", "<C-i>", opts)
 
 -- New tab
-keymap.set("n", "te", "tabedit", opts)
+keymap.set("n", "te", ":tabedit<Return>", opts)
 keymap.set("n", "<tab>", ":tabnext<Return>", opts)
 
 --Split window
@@ -33,3 +33,8 @@ keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
+
+-- Diagnostics
+keymap.set("n", "<C-j>", function()
+  vim.diagnostic.goto_next(opts)
+end)
